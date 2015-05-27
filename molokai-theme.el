@@ -4,9 +4,10 @@
       ;; molokai palette
       (molokai-white          "#ffffff")
       (molokai-fg             "#f8f8f0")
-      (molokai-red            "#ff0000")
+      (molokai-red            "#ff2727")
       (molokai-pink           "#f92672")
       (molokai-pink+1         "#ea0037")
+      (molokai-pink+2         "#fe1333")
       (molokai-orange+5       "#ef5939")
       (molokai-orange         "#fd971f")
       (molokai-yellow         "#ffff00")
@@ -95,14 +96,16 @@
    `(hl-line ((,class (:background ,molokai-grey+5)) (t :weight bold)))
 
    ;; org-mode
-   ;; `(org-level-1 ((t (:foreground ,molokai-green))))
-   ;; `(org-level-2 ((t (:foreground ,molokai-green))))
-   `(org-level-3 ((t (:foreground ,molokai-orange+5))))
+   `(org-level-1 ((t (:foreground ,molokai-chartreuse))))
+   `(org-level-2 ((t (:foreground ,molokai-orange))))
+   `(org-level-3 ((t (:foreground ,molokai-red))))
    `(org-level-4 ((t (:foreground ,molokai-purple))))
    `(org-level-5 ((t (:foreground ,molokai-blue))))
+   `(org-level-3 ((t (:foreground ,molokai-orange+5))))
    `(org-level-6 ((t (:foreground ,molokai-chartreuse))))
    `(org-level-7 ((t (:foreground ,molokai-palevioletred))))
-   `(org-level-8 ((t (:foreground ,molokai-wheat))))
+   `(org-level-8 ((t (:foreground ,molokai-orange+5))))
+   `(org-level-9 ((t (:foreground ,molokai-wheat))))
 
    ;; TODO
    ;; ido-mode

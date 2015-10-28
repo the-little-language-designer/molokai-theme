@@ -1,4 +1,3 @@
-* ===================================
 * heading-level-1
 ** heading-level-2
 *** heading-level-3
@@ -8,8 +7,8 @@
 ******* heading-level-7
 ******** heading-level-8
 ********* heading-level-9
-* -----------------------------------
-* molokai
+
+* molokai-theme.el
   #+begin_src emacs-lisp :tangle molokai-theme.el
   (deftheme molokai "The molokai color theme for Emacs 24")
 
@@ -46,12 +45,10 @@
         (molokai-grey+3         "#4c4745")
         (molokai-grey+5         "#232526")
 
-        ;; 背景
         (molokai-bg             "#1b1d1e")
 
         (molokai-grey+10        "#080808")
         (molokai-dark           "#000000")
-
 
         ;; comment
         (molokai-base01         "#FF8888")
@@ -154,4 +151,48 @@
 
   (provide-theme 'molokai)
   #+end_src
-* ===================================
+
+* molokai-theme-kit.el
+  #+begin_src emacs-lisp :tangle molokai-theme-kit.el
+  (setq-default
+   mode-line-format
+   (list
+    ;; line and column
+    " "
+    (propertize "%3c" 'face 'font-lock-type-face)
+    " "
+    (propertize "%4l" 'face 'font-lock-type-face)
+    " "
+    ;; the buffer name; the file name as a tool tip
+    '(:eval
+      (propertize "%b" 'face 'font-lock-keyword-face 'help-echo (buffer-file-name)))
+    ;; was this buffer modified since the last save?
+    '(:eval
+      (when (buffer-modified-p)
+        (concat " "
+                (propertize "modified"
+                            'face 'font-lock-preprocessor-face
+                            'help-echo "Buffer has been modified"))))
+    ;; is this buffer read-only?
+    '(:eval
+      (when buffer-read-only
+        (concat " "
+                (propertize "read-only"
+                            'face 'font-lock-preprocessor-face
+                            'help-echo "Buffer is read-only"))))
+    " "
+
+    ;; the current major mode for the buffer.
+    '(:eval
+      (propertize "%m" 'face 'font-lock-string-face 'help-echo buffer-file-coding-system))
+    " "
+
+    ;; relative position, size of file
+    (propertize "%I" 'face 'font-lock-constant-face)
+    " "
+    (propertize "%p" 'face 'font-lock-constant-face)
+
+    ))
+
+  (provide 'molokai-theme-kit)
+  #+end_src

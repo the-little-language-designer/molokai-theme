@@ -33,12 +33,10 @@
       (molokai-grey+3         "#4c4745")
       (molokai-grey+5         "#232526")
 
-      ;; 背景
       (molokai-bg             "#1b1d1e")
 
       (molokai-grey+10        "#080808")
       (molokai-dark           "#000000")
-
 
       ;; comment
       (molokai-base01         "#FF8888")
@@ -101,10 +99,9 @@
    `(org-level-3 ((t (:foreground ,molokai-red))))
    `(org-level-4 ((t (:foreground ,molokai-purple))))
    `(org-level-5 ((t (:foreground ,molokai-blue))))
-   `(org-level-3 ((t (:foreground ,molokai-orange+5))))
    `(org-level-6 ((t (:foreground ,molokai-chartreuse))))
-   `(org-level-7 ((t (:foreground ,molokai-palevioletred))))
-   `(org-level-8 ((t (:foreground ,molokai-orange+5))))
+   `(org-level-7 ((t (:foreground ,molokai-orange+5))))
+   `(org-level-8 ((t (:foreground ,molokai-palevioletred))))
    `(org-level-9 ((t (:foreground ,molokai-wheat))))
 
    ;; TODO
